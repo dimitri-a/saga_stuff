@@ -18,11 +18,10 @@ const reduxDevTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 // create a redux store with our reducer above and middleware
-let store = createStore(reducer, reduxDevTools ,applyMiddleware(sagaMiddleware));
+let store = createStore(reducer, reduxDevTools );
 
 // run the saga
-sagaMiddleware.run(watcherSaga);
-
+//sagaMiddleware.run(watcherSaga);
 
 
 ReactDOM.render(<Provider store={store}>
