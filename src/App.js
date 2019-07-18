@@ -3,6 +3,8 @@ import "./App.css";
 import { connect } from "react-redux";
 
 function App(props) {
+  debugger
+  props.onRequestPost();
   const { datas } = props;
   return <div className="App">{datas}</div>;
 }
@@ -13,13 +15,13 @@ const mapStateToProps = state => {
   };
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onRequestDog: () => dispatch({ type: "API_CALL_REQUEST_POST" })
-//   };
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    onRequestPost: () => dispatch({ type: "API_GET_REQUEST" })
+  };
+};
 
 export default connect(
   mapStateToProps,
-  {}
+  mapDispatchToProps
 )(App);
