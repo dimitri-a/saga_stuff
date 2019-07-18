@@ -2,12 +2,9 @@ import React from "react";
 import "./App.css";
 import { connect } from "react-redux";
 
-function App() {
-  debugger;
-  const { datas } = this.props;
-
-  debugger;
-  return <div className="App">{datas}}</div>;
+function App(props) {
+  const { datas } = props;
+  return <div className="App">{datas}</div>;
 }
 
 const mapStateToProps = state => {
