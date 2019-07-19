@@ -11,8 +11,8 @@ export function* watcherSaga() {
 function* workerSaga() {
   try {
     debugger
-    const response = yield call(fetchPost);
-    const post = response.data.message;
+    const response = yield call(fetchGet);
+    const post = response.data.author;
 
     // dispatch a success action to the store with the new dog
     yield put({ type: "API_GET_SUCCESS", post });
@@ -22,21 +22,21 @@ function* workerSaga() {
   }
 }
 
-function* workerSagaPost() {
-  try {
-    debugger
-    const response = yield call(postSomething);
-    const what = response.data.message;
+// function* workerSagaPost() {
+//   try {
+//     debugger
+//     const response = yield call(postSomething);
+//     const what = response.data.message;
 
-    // dispatch a success action to the store with the new dog
-    debugger;
-    yield put({ type: "API_CALL_SUCCESS_POST", what });
-  } catch (error) {
-    debugger;
-    // dispatch a failure action to the store with the error
-    yield put({ type: "API_CALL_FAILURE", error });
-  }
-}
+//     // dispatch a success action to the store with the new dog
+//     debugger;
+//     yield put({ type: "API_CALL_SUCCESS_POST", what });
+//   } catch (error) {
+//     debugger;
+//     // dispatch a failure action to the store with the error
+//     yield put({ type: "API_CALL_FAILURE", error });
+//   }
+// }
 
 // const json = yield call(() =>
 //     fetch("https://jsonplaceholder.typicode.com/users")
@@ -46,7 +46,7 @@ function* workerSagaPost() {
 //   yield put({ type: "RECEIVED_DATA", json: json });
 
 // function that returns api response
-function fetchPost() {
+function fetchGet() {
   debugger
   return axios({
     method: "get",
@@ -55,19 +55,19 @@ function fetchPost() {
 }
 
 
-function postSomething(){
-  debugger;
-  return fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    body: JSON.stringify({
-      title: 'foo',
-      body: 'bar',
-      userId: 1
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8"
-    }
-  })
-  .then(response => response.json())
-  .then(json => console.log(json))
-}
+// function postSomething(){
+//   debugger;
+//   return fetch('https://jsonplaceholder.typicode.com/posts', {
+//     method: 'POST',
+//     body: JSON.stringify({
+//       title: 'foo',
+//       body: 'bar',
+//       userId: 1
+//     }),
+//     headers: {
+//       "Content-type": "application/json; charset=UTF-8"
+//     }
+//   })
+//   .then(response => response.json())
+//   .then(json => console.log(json))
+// }

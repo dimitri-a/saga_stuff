@@ -3,7 +3,7 @@ import "./App.css";
 import { connect } from "react-redux";
 
 function App(props) {
-  debugger
+
   props.onRequestPost();
   const { datas } = props;
   return <div className="App">{datas}</div>;
