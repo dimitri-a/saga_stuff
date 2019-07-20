@@ -24,10 +24,10 @@ function* workerSaga(p) {
 
 
 // how to pass in parameter p?
-function fetchGet(p) {
+function doPost() {
   debugger
   return axios({
-    method: "get",
-    url: "http://localhost:3000/posts/"+p
+    method: "post",
+    url: "http://localhost:3000/posts/"
   });
 }
