@@ -4,12 +4,12 @@ import { connect } from "react-redux";
 
 function getMessage(props) {
   debugger
-  props.onRequestGetMessage();
+  props.onRequestGet();
 }
 
 function updateMessage(props) {
   debugger
-  props.onRequestUpdateMessage();
+  props.onRequestUpdate();
 }
 
 function App(props) {
@@ -32,7 +32,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRequestGet: p => dispatch({ type: "API_GET_REQUEST"})
+    onRequestGet: p => dispatch({ type: "API_GET_REQUEST"}),
+    onRequestUpdate: p => dispatch({ type: "API_POST_REQUEST"})
   };
 };
 

@@ -10,7 +10,7 @@ function reducer(state = "hello", action) {
  
     case API_GET_SUCCESS:
         debugger
-      return action.post;
+      return action.message;
 
     case API_POST_SUCCESS:
         debugger
