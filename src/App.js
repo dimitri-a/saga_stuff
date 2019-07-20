@@ -13,6 +13,8 @@ function App(props) {
     <div className="App">
       {datas}
       <button onClick={()=>postOne(props,1)}>post 1</button>
+      <button onClick={()=>postOne(props,2)}>post 2</button>
+      <button onClick={()=>postOne(props,3)}>post 3</button>
     </div>
   );
 }

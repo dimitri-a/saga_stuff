@@ -3,15 +3,15 @@ import axios from "axios";
 
 // how to pass in parameter here?
 export function* watcherSaga(p) {
-  yield takeLatest("API_GET_REQUEST", workerSaga,p);
+  yield takeLatest("API_GET_REQUEST", workerSaga);
   
 }
 
 // worker saga: makes the api call when watcher saga sees the action
-function* workerSaga() {
+function* workerSaga(p) {
   try {
     debugger
-    const response = yield call(fetchGet);
+    const response = yield call(fetchGet,p.data);
     const post = response.data.author;
 
     // dispatch a success action to the store with the new dog
