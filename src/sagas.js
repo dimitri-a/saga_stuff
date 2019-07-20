@@ -46,11 +46,11 @@ function* workerSaga() {
 //   yield put({ type: "RECEIVED_DATA", json: json });
 
 // function that returns api response
-function fetchGet() {
+function fetchGet(p) {
   debugger
   return axios({
     method: "get",
-    url: "http://localhost:3000/posts/2"
+    url: "http://localhost:3000/posts/"+p
   });
 }
 

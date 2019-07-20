@@ -2,11 +2,19 @@ import React from "react";
 import "./App.css";
 import { connect } from "react-redux";
 
-function App(props) {
+function postOne(props, p) {
+  debugger
+  props.onRequestGet(p);
+}
 
-  props.onRequestPost();
+function App(props) {
   const { datas } = props;
-  return <div className="App">{datas}</div>;
+  return (
+    <div className="App">
+      {datas}
+      <button onClick={()=>postOne(props,1)}>post 1</button>
+    </div>
+  );
 }
 
 const mapStateToProps = state => {
@@ -17,7 +25,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRequestPost: () => dispatch({ type: "API_GET_REQUEST" })
+    onRequestGet: p => dispatch({ type: "API_GET_REQUEST", data: p })
   };
 };
 
