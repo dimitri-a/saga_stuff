@@ -22,30 +22,8 @@ function* workerSaga() {
   }
 }
 
-// function* workerSagaPost() {
-//   try {
-//     debugger
-//     const response = yield call(postSomething);
-//     const what = response.data.message;
 
-//     // dispatch a success action to the store with the new dog
-//     debugger;
-//     yield put({ type: "API_CALL_SUCCESS_POST", what });
-//   } catch (error) {
-//     debugger;
-//     // dispatch a failure action to the store with the error
-//     yield put({ type: "API_CALL_FAILURE", error });
-//   }
-// }
-
-// const json = yield call(() =>
-//     fetch("https://jsonplaceholder.typicode.com/users")
-//       .then(response => response.json())
-//       .then(myJson => myJson)
-//   );
-//   yield put({ type: "RECEIVED_DATA", json: json });
-
-// function that returns api response
+// how to pass in parameter p?
 function fetchGet(p) {
   debugger
   return axios({
@@ -53,21 +31,3 @@ function fetchGet(p) {
     url: "http://localhost:3000/posts/"+p
   });
 }
-
-
-// function postSomething(){
-//   debugger;
-//   return fetch('https://jsonplaceholder.typicode.com/posts', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//       title: 'foo',
-//       body: 'bar',
-//       userId: 1
-//     }),
-//     headers: {
-//       "Content-type": "application/json; charset=UTF-8"
-//     }
-//   })
-//   .then(response => response.json())
-//   .then(json => console.log(json))
-// }
