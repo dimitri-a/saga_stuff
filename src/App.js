@@ -13,13 +13,13 @@ function updateMessage(props) {
 }
 
 function App(props) {
-  const { message } = props;
+  const { message, datas } = props;
   return (
     <div className="App">
       {message}
       <button onClick={()=>getMessage(props)}>get message</button>
       <button onClick={()=>updateMessage(props)}>update message</button>
-     
+     {datas}
     </div>
   );
 }

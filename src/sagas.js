@@ -45,7 +45,8 @@ function doPost() {
   debugger
   return axios({
     method: "post",
-    url: "http://localhost:3000/posts/"
+    url: "http://localhost:3000/posts/",
+    data:{author:'New author'}
   });
 }
 

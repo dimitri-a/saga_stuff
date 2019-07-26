@@ -17,7 +17,7 @@ function reducer(state = "hello", action) {
         //refresh data
         //dispatch API_GET_REQUEST
         //what is the handiest to update data in component?
-      return action.post;
+      return action.message;
   }
 }
 
